@@ -67,5 +67,7 @@ esp32s31/firmware/*.bin
 # and the ESP-Mosaico board test (examples/mosaico-board, IDF v6.1)
 !esp32s31/firmware/s31-mosaico-board.bin
 
+# agent worktrees (Claude Code isolation)
+/.claude/
 # saved firmware projects of a local `docker compose up` (docs/docker.md)
 /projects/

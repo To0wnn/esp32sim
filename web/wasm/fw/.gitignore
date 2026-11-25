@@ -81,3 +81,5 @@ public/p4-hosted-rev3-bootloader.bin
 public/p4-hosted-rev3-station.bin
 public/p4-hosted-rawtp-rx.bin
 public/p4-hosted-rawtp-tx.bin
+
+# The mask ROMs and MicroPython are fetched by tools/fetch-demo-assets.sh, as upstream does.
