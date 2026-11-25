@@ -1,0 +1,12 @@
+# Self-hosted browser build: see docs/docker.md. Build web/ first (tools/wasm-build.sh or
+# tools/docker-wasm.sh, then tools/fetch-demo-assets.sh), then `docker compose up -d --build`.
+services:
+  esp32sim:
+    build: .
+    image: esp32sim:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Saved firmware projects (the firmware panel's "Save as project"); nginx in the image runs as uid 101.
+      - ./projects:/usr/share/nginx/html/wasm/fw/projects

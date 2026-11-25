@@ -1,0 +1,6 @@
+# The image only copies default.conf and web/; everything else is build context waste (target/ is GBs).
+*
+!default.conf
+!web/
+# Saved projects live on a volume (compose.yaml, docs/docker.md), never in the image.
+web/wasm/fw/projects
