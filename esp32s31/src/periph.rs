@@ -192,8 +192,9 @@ pub struct TimgS31 {
 
 impl TimgS31 {
     /// Counts T0/T1 from the source and gate in the PCR clock word (`hp_sys_clkrst_struct.h`
-    /// TIMERGRPn_CTRL0: Tx_SRC_SEL bits 3-4 / 6-7, Tx_CLK_EN bit 5 / 8). Source ids as in the
-    /// P4 `timer_ll_set_clock_source`: 0 XTAL, 1 RC_FAST, 2 PLL_F80M (S31: REF_F80M).
+    /// TIMERGRPn_CTRL0: Tx_SRC_SEL bits 3-4 / 6-7, Tx_CLK_EN bit 5 / 8). Source ids from
+    /// `_timer_ll_set_clock_source` in `components/esp_hal_timg/esp32s31/include/hal/timer_ll.h`,
+    /// IDF v6.1: 0 XTAL, 1 RC_FAST, 2 REF_F80M.
     pub fn advance(&mut self, cycles: u64, cpu_hz: u64, rc_fast_hz: u64) {
         let clock = self.wdt.clock_read();
         for i in 0..2 {
